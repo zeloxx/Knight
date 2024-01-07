@@ -35,7 +35,8 @@ class YeakelRobert implements IKnightMoves {
 
     private isValidPosition(position: Position): boolean {
         const [x, y] = position;
-        if (x < 0 || x >= this.board.length || y < 0 || y >= this.board[x].length) {
+
+        if (this.board[x]?.[y] === undefined) {
             return false;
         }
 
