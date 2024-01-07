@@ -6,7 +6,7 @@ interface IKnightMoves {
     solve(): number;
 }
 
-class YeakelRobert implements IKnightMoves {
+class KnightTraversal implements IKnightMoves {
     private board: Board;
     private moveDeltas: Delta[];
     private restrictedCharacters: Set<string>;
@@ -43,13 +43,13 @@ class YeakelRobert implements IKnightMoves {
         return [position[0] + delta[0], position[1] + delta[1]];
     }
 
-    private isVowel(position: Position): boolean {
+    private isRestrictedCharacter(position: Position): boolean {
         const [x, y] = position;
         return this.restrictedCharacters.has(this.board[x][y]!);
     }
 
     private knightDfs(position: Position, totalMoves = 0, badCharacterCount = 0): number {
-        if (this.isVowel(position)) {
+        if (this.isRestrictedCharacter(position)) {
             badCharacterCount += 1;
         }
         if (badCharacterCount === this.maxRestrictedCharacters) {
@@ -120,6 +120,6 @@ const board: Board = [
     ["u", "v", null, null, "y"],
 ];
 
-const knightTraversal = new YeakelRobert({ board, moveDeltas: KNIGHT_MOVE_DELTAS, restrictedCharacters: VOWELS, maxMoves: 10, maxRestrictedCharacters: 2 });
+const knightTraversal = new KnightTraversal({ board, moveDeltas: KNIGHT_MOVE_DELTAS, restrictedCharacters: VOWELS, maxMoves: 10, maxRestrictedCharacters: 2 });
 const totalPaths = knightTraversal.solve();
 console.log(totalPaths);
