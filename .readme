@@ -1,0 +1,17 @@
+# Knight Moves Challenge
+
+### Instructions to run the program
+
+<b>If TypeScript is installed on your machine just do the following:</b>
+
+1. Open a terminal
+2. Navigate to the root folder of the project
+3. Run the following command:
+   `ts-node index.ts`
+
+<b>If you don't have TypeScript installed:</b>
+
+1. Run the following command:
+   `npm install`
+2. Run the following command:
+   `npm start`
