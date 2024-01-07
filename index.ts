@@ -6,7 +6,7 @@ interface IKnightMoves {
     solve(): number;
 }
 
-class KnightTraversal implements IKnightMoves {
+class YeakelRobert implements IKnightMoves {
     private board: Board;
     private moveDeltas: Delta[];
     private restrictedCharacters: Set<string>;
@@ -120,6 +120,6 @@ const board: Board = [
     ["u", "v", null, null, "y"],
 ];
 
-const knightTraversal = new KnightTraversal({ board, moveDeltas: KNIGHT_MOVE_DELTAS, restrictedCharacters: VOWELS, maxMoves: 9, maxRestrictedCharacters: 2 });
+const knightTraversal = new YeakelRobert({ board, moveDeltas: KNIGHT_MOVE_DELTAS, restrictedCharacters: VOWELS, maxMoves: 9, maxRestrictedCharacters: 2 });
 const totalPaths = knightTraversal.solve();
 console.log(totalPaths);
