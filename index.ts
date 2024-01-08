@@ -86,7 +86,7 @@ namespace YeakelRobert {
         }
 
         private calculateTotalPaths(position: Position): number {
-            return this.knightDfs(position, 0, 0);
+            return this.knightDfs(position);
         }
 
         public solve(): number {
