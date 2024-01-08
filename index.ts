@@ -120,6 +120,6 @@ const board: Board = [
     ["u", "v", null, null, "y"],
 ];
 
-const knightTraversal = new YeakelRobert({ board, moveDeltas: KNIGHT_MOVE_DELTAS, restrictedCharacters: VOWELS, maxMoves: 9, maxRestrictedCharacters: 2 });
+const knightTraversal = new YeakelRobert({ board, moveDeltas: KNIGHT_MOVE_DELTAS, restrictedCharacters: VOWELS, maxMoves: 9, maxRestrictedCharacters: 3 });
 const totalPaths = knightTraversal.solve();
 console.log(totalPaths);
